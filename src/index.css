@@ -78,10 +78,6 @@ input[data-test="dp-input"] {
   scrollbar-width: none; /* Firefox */
 }
 
-.container {
-  /* @apply mx-auto; */
-}
-
 .see-more-icon {
   clip-path: polygon(100% 0, 0 0, 50% 30%);
 }
