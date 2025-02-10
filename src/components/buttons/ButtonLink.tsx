@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { colors } from ".";
+import { Link } from "react-router-dom";
 
 const AppButton = (props: {
   color: keyof typeof colors;
@@ -7,10 +8,12 @@ const AppButton = (props: {
   children?: ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
+  to: string;
 }) => {
   return (
-    <button
-      className={`rounded-md flex items-center gap-2 disabled:hover:brightness-100 duration-200 cursor-pointer ${
+    <Link
+      to={props.to}
+      className={`w-fit rounded-md flex items-center gap-2 disabled:hover:brightness-100 duration-200 cursor-pointer ${
         colors[props.color].bg
       } ${colors[props.color].text} ${colors[props.color].bgDisable} ${
         colors[props.color].textDisable
@@ -19,11 +22,9 @@ const AppButton = (props: {
           ? "px-2 py-1 my-1 text-xs"
           : "px-4 py-2 my-2 text-sm"
       }`}
-      onClick={props.onClick}
-      disabled={props.disabled}
     >
       {props.children}
-    </button>
+    </Link>
   );
 };
 

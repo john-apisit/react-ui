@@ -21,7 +21,7 @@ const ModalConfirm = () => {
     <Modal
       title={confirm.modalState.title}
       showModal={confirm.modalState.showModal}
-      onClose={close}
+      onClose={confirm.close}
       footer={footer}
     >
       <p>{confirm.modalState.message}</p>
