@@ -1,9 +1,12 @@
+import { useCopyToClipboard } from "@uidotdev/usehooks";
 import { Clipboard } from "lucide-react";
 import { toast } from "react-toastify";
 
 const ButtonCopy = (props: { text: string }) => {
+  const [, copyToClipboard] = useCopyToClipboard();
+
   const copyText = async () => {
-    await navigator.clipboard.writeText(props.text);
+    await copyToClipboard(props.text);
     toast("Copied!");
   };
 
