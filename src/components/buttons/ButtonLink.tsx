@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { colors } from ".";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const AppButton = (props: {
   color: keyof typeof colors;
