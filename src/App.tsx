@@ -9,6 +9,8 @@ import InfiniteCards from "./pages/demo/InfiniteCards";
 import { nanoid } from "@reduxjs/toolkit";
 import SelectLanguage from "./components/selects/SelectLanguage";
 import UserIdle from "./components/labels/UserIdle";
+import { withAuth } from "./hocs/withAuth";
+import Profile from "./pages/user/Profile";
 
 const TopMenu = () => {
   const menuList = [
@@ -33,6 +35,8 @@ const TopMenu = () => {
   );
 };
 
+const ProfileWithAuth = withAuth(Profile, "aaaaaaaa....bbbbbbb");
+
 function App() {
   const confirmModal = useConfirmModal();
 
@@ -43,6 +47,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/demo/infinite-cards" element={<InfiniteCards />} />
+          <Route
+            path="/profile"
+            element={<ProfileWithAuth money={10000000} />}
+          />
         </Routes>
       </div>
       <ModalConfirm />
